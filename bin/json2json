@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'bundler/setup'
+require 'json'
+require 'yaml'
+require File.expand_path("../../lib/sorted.rb", __FILE__)
+
+puts JSON.pretty_generate(JSON.load(STDIN.read).to_hash)
