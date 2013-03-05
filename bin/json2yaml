@@ -6,4 +6,5 @@ require 'json'
 require 'yaml'
 require File.expand_path("../../lib/sorted.rb", __FILE__)
 
+JSON.create_id = nil
 puts JSON.load(STDIN.read).to_hash.to_yaml
