@@ -1,0 +1,24 @@
+#!/bin/bash
+
+function switch {
+  local nm_mark="$1"; shift
+  touch wait-$nm_mark
+  echo //$nm_mark
+  while [[ -f "wait-$nm_mark" ]]; do
+    sleep 1
+  done
+}
+
+echo foo
+echo bar
+echo baz
+
+switch alpha
+echo a
+echo b
+echo b
+
+switch digits
+echo 1
+echo 2
+echo 3
