@@ -1,0 +1,15 @@
+#!/bin/bash
+
+nm_switch=""
+while read -r a; do
+  if [[ "$a" =~ ^// ]]; then
+    nm_switch="${a#//}"
+    rm wait-$nm_switch
+  else
+    if [[ -z "$nm_switch" ]]; then
+      echo "$a"
+    else
+      echo "$nm_switch: $a"
+    fi
+  fi
+done
